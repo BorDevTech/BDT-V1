@@ -4,7 +4,6 @@ export const metadata: Metadata = {
   title: "BDT | Projects",
 };
 
-
 export default function Page() {
   return <> </>;
 }

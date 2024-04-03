@@ -1,8 +1,17 @@
-import NextLink from "next/link";
+"use client";
 
-import Image from "next/image";
-import { Box, HStack, Link } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import {
+  Spacer,
+  GridItem,
+  HStack,
+  Text,
+  Flex,
+  Button,
+  Heading,
+} from "@chakra-ui/react";
+import { Link } from "@chakra-ui/next-js";
+import ColorModeSwitch, { ColorModeRadio } from "./colorModeSwitch";
+import Brand from "./UI/Brand";
 
 export const NavigationBar = (children: JSX.Element) => {
   return;
@@ -17,18 +26,46 @@ export const NavigationBarLink = (children: JSX.Element) => {
 
 export default function Navbar() {
   return (
-    <HStack as={"nav"} className="bg-white">
-      <Box w="100%">
-        <Link as={NextLink} href={"/"}>
-          <Image
-            src={""}
-            alt="Logo"
-            width={50}
-            height={50}
-            className="block md:hidden"
-          />
-        </Link>
-      </Box>
-    </HStack>
+    <>
+      <GridItem area={"nav"} border={"1px"} rowSpan={1} colSpan={5}>
+        <Flex as={"nav"}>
+          <HStack>
+            <Brand />
+            <Spacer />
+            <HStack spacing={4}>
+              <Link href={"/about"}>
+                <Heading as={"h2"} size={"md"}>
+                  About
+                </Heading>
+              </Link>
+              <Link href={"/projects"}>
+                <Heading as={"h2"} size={"md"}>
+                  Projects
+                </Heading>
+              </Link>
+              <Link href={"/services"}>
+                <Heading as={"h2"} size={"md"}>
+                  Services
+                </Heading>
+              </Link>
+              <Link href={"/contact"}>
+                <Heading as={"h2"} size={"md"}>
+                  Contact
+                </Heading>
+              </Link>
+            </HStack>
+          </HStack>
+
+          <Spacer />
+          <HStack>
+            <Button as={Link} href={"/client/signup"}>
+              Sign Up
+            </Button>
+            <ColorModeSwitch />
+            <ColorModeRadio />
+          </HStack>
+        </Flex>
+      </GridItem>
+    </>
   );
 }

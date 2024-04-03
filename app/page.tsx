@@ -1,16 +1,15 @@
 "use client";
 
-import { useColorMode } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+import Navbar from "@/app/components/navbar";
+import Footer from "@/app/components/UI/footer";
+import MainDisplay from "@/app/components/UI/main-display";
 
 export default function Page() {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <>
-      <Button onClick={toggleColorMode}>
-        {colorMode === "dark" ? "Dark" : "Light"}
-      </Button>
+      <Navbar />
+      <MainDisplay />
+      <Footer />
     </>
   );
 }

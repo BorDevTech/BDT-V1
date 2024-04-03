@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
+import theme from "./lib/theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
